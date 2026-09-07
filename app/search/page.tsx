@@ -1,4 +1,5 @@
 "use client";
+import { SEARCH_RESULT_LIMIT } from "@/constants/common";
 
 import { useState } from "react";
 
@@ -6,7 +7,9 @@ export default function SearchPage() {
   const [keyword, setKeyword] = useState("");
 
   const handleSearch = () => {
-    console.log(`検索したワードは${keyword}です`);
+    console.log(
+      `検索したワードは${keyword}です。最大取得数は${SEARCH_RESULT_LIMIT}件です。`,
+    );
   };
 
   return (
