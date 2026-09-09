@@ -1,5 +1,3 @@
-"use client";
-
 import { Article } from "../types/blog";
 
 export const SEARCH_RESULT_LIMIT = 20;
