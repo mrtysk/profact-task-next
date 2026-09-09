@@ -18,9 +18,9 @@ export default function BlogDetail({
 
   return (
     <div>
-      <h2>{article.title}</h2>
-      <h3>{article.author}</h3>
-      <p>ID: {unwrappedParams.id}</p>
+      <h1>{article.title}</h1>
+      <h2>{article.author}</h2>
+      <h3>ID: {unwrappedParams.id}</h3>
       <p>{article.content}</p>
     </div>
   );
