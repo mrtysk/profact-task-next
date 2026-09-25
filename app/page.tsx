@@ -2,7 +2,7 @@
 import "./globals.css";
 
 export default function Article() {
-  const articleCard = [
+  const articleDatas = [
     {
       id: "1",
       title: "ブログ記事1...",
@@ -80,7 +80,7 @@ export default function Article() {
   return (
     <div>
       <ul className="grid-item">
-        {articleCard.map((article, index) => (
+        {articleDatas.map((article, index) => (
           <li className="grid-line" key={index}>
             {article.title}
             {article.author}
