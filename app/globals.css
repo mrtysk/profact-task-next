@@ -1,24 +1,25 @@
-.grid-container {
+.grid-item {
+  list-style: none;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding: 16px;
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.article-card {
-  border: 1px solid #cbd0d3;
-  padding: 16px;
+.grid-line {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 5px;
 }
 
-.page-padding {
-  padding: 16px;
+.headerRight {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
 }
 
-.input-style {
-  margin-right: 8px;
-  padding: 4px;
-}
-
-.button-style {
-  padding: 4px 8px;
+.footerCenter {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }

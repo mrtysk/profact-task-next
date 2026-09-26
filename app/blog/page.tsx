@@ -1,7 +1,7 @@
 "use client";
 
-export default function BlogDetail() {
-  const article = {
+export default function ArticleDetail() {
+  const displayArticleData = {
     id: "1",
     title: "ブログ記事1...",
     author: "山田 太郎",
@@ -9,10 +9,10 @@ export default function BlogDetail() {
   };
 
   return (
-    <div className="page-padding">
-      <h1>{article.title}</h1>
-      <h2>{article.author}</h2>
-      <p>{article.content}</p>
+    <div>
+      <h1>{displayArticleData.title}</h1>
+      <h2>{displayArticleData.author}</h2>
+      <p>{displayArticleData.content}</p>
     </div>
   );
 }

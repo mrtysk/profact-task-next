@@ -1,89 +1,92 @@
 "use client";
+import "./globals.css";
 
-export default function Home() {
-  const articles = [
+export default function Article() {
+  const articleDatas = [
     {
       id: "1",
-      title: "ブログ記事1",
+      title: "ブログ記事1...",
       author: "山田 太郎",
-      content: "ブログ内容1...",
+      content: "ブログ内容...",
     },
     {
       id: "2",
-      title: "ブログ記事2",
+      title: "ブログ記事2...",
       author: "山田 太郎",
-      content: "ブログ内容2...",
+      content: "ブログ内容...",
     },
     {
       id: "3",
-      title: "ブログ記事3",
+      title: "ブログ記事3...",
       author: "山田 太郎",
-      content: "ブログ内容3...",
+      content: "ブログ内容...",
     },
     {
       id: "4",
-      title: "ブログ記事4",
+      title: "ブログ記事4...",
       author: "山田 太郎",
-      content: "ブログ内容4...",
+      content: "ブログ内容...",
     },
     {
       id: "5",
-      title: "ブログ記事5",
+      title: "ブログ記事5...",
       author: "山田 太郎",
-      content: "ブログ内容5...",
+      content: "ブログ内容...",
     },
     {
       id: "6",
-      title: "ブログ記事6",
+      title: "ブログ記事6...",
       author: "山田 太郎",
-      content: "ブログ内容6...",
+      content: "ブログ内容...",
     },
     {
       id: "7",
-      title: "ブログ記事7",
+      title: "ブログ記事7...",
       author: "山田 太郎",
-      content: "ブログ内容7...",
+      content: "ブログ内容...",
     },
     {
       id: "8",
-      title: "ブログ記事8",
+      title: "ブログ記事8...",
       author: "山田 太郎",
-      content: "ブログ内容8...",
+      content: "ブログ内容...",
     },
     {
       id: "9",
-      title: "ブログ記事9",
+      title: "ブログ記事9...",
       author: "山田 太郎",
-      content: "ブログ内容9...",
+      content: "ブログ内容...",
     },
     {
       id: "10",
-      title: "ブログ記事10",
+      title: "ブログ記事10...",
       author: "山田 太郎",
-      content: "ブログ内容10...",
+      content: "ブログ内容...",
     },
     {
       id: "11",
-      title: "ブログ記事11",
+      title: "ブログ記事11...",
       author: "山田 太郎",
-      content: "ブログ内容11...",
+      content: "ブログ内容...",
     },
     {
       id: "12",
-      title: "ブログ記事12",
+      title: "ブログ記事12...",
       author: "山田 太郎",
-      content: "ブログ内容12...",
+      content: "ブログ内容...",
     },
   ];
 
   return (
-    <div className="grid-container">
-      {articles.map((article) => (
-        <div key={article.id} className="article-card">
-          <h2>{article.title}</h2>
-          <p>作者: {article.author}</p>
-        </div>
-      ))}
+    <div>
+      <ul className="grid-item">
+        {articleDatas.map((article, index) => (
+          <li className="grid-line" key={index}>
+            {article.title}
+            {article.author}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

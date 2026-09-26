@@ -2,26 +2,25 @@
 
 import { useState } from "react";
 
-export default function SearchPage() {
-  const [keyword, setKeyword] = useState("");
+export default function Search() {
+  const [text, setText] = useState("");
 
-  const handleSearch = () => {
-    console.log(`検索したワードは${keyword}です`);
-  };
+  function handleInput(event) {
+    setText(event.target.value);
+  }
+
+  function searchButton() {
+    console.log(`検索したワードは${text}です`);
+  }
 
   return (
-    <div className="page-padding">
-      <h2>検索ページ</h2>
+    <div>
       <input
         type="text"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-        placeholder="検索ワードを入力..."
-        className="input-style"
+        onChange={handleInput}
+        placeholder="検索ワードを入力"
       />
-      <button onClick={handleSearch} className="button-style">
-        検索ボタン
-      </button>
+      <button onClick={searchButton}>検索</button>
     </div>
   );
 }
