@@ -1,5 +1,6 @@
 "use client";
 
+import { ARTICLE_DATAS } from "@/constants/common";
 import { useState } from "react";
 
 export default function Search() {
@@ -10,7 +11,9 @@ export default function Search() {
   }
 
   function searchButton() {
-    console.log(`検索したワードは${text}です`);
+    console.log(
+      `検索したワードは${text}です。最大取得数は${ARTICLE_DATAS.length}件です。`,
+    );
   }
 
   return (
