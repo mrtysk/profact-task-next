@@ -80,7 +80,7 @@ export default function ArticleCards() {
   const pickArticleDatas = [];
   for (let i = 0; i < articleDatas.length; i++) {
     pickArticleDatas.push({
-      key: articleDatas[i].id,
+      id: articleDatas[i].id,
       title: articleDatas[i].title,
       author: articleDatas[i].author,
     });
@@ -90,9 +90,8 @@ export default function ArticleCards() {
   for (let a = 0; a < pickArticleDatas.length; a++) {
     elArticleDatas.push(
       <li className="cardStyle" key={pickArticleDatas[a].id}>
-        {pickArticleDatas[a].title}
-        <br></br>
-        {pickArticleDatas[a].author}
+        <div> {pickArticleDatas[a].title}</div>
+        <div>{pickArticleDatas[a].author}</div>
       </li>,
     );
   }
