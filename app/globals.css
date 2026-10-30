@@ -22,3 +22,13 @@
 .button-style {
   padding: 4px 8px;
 }
+
+.header-style {
+  display: flex;
+  justify-content: end;
+}
+
+.footer-style {
+  display: flex;
+  justify-self: center;
+}

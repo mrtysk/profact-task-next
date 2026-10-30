@@ -1,21 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { ARTICLE_DATAS } from "@/constants/common";
 
 export default function SearchPage() {
-  const [keyword, setKeyword] = useState("");
+  let limit = 0;
+  limit = ARTICLE_DATAS.length;
 
+  const [keyword, setKeyword] = useState("");
   const handleSearch = () => {
-    console.log(`検索したワードは${keyword}です`);
+    console.log(`検索したワードは${keyword}です。最大取得数は${limit}件です。`);
   };
 
   return (
     <div className="page-padding">
-      <h2>検索ページ</h2>
+      <h1>検索ページ</h1>
       <input
         type="text"
         value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
+        onChange={(event) => setKeyword(event.target.value)}
         placeholder="検索ワードを入力..."
         className="input-style"
       />
