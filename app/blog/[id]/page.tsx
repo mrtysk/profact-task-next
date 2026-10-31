@@ -1,6 +1,7 @@
 "use client";
 import { use } from "react";
 import { ARTICLE_DATAS } from "@/constants/common";
+import { Blog } from "@/types/blog";
 
 export default function BlogDetail({
   params,
@@ -17,6 +18,10 @@ export default function BlogDetail({
       selectArticle = ARTICLE_DATAS[i];
       break;
     }
+  }
+
+  if (selectArticle === null) {
+    return <h1>NOT FOUND</h1>;
   }
 
   return (
