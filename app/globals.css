@@ -13,3 +13,8 @@
 .title {
   font-size: 24px;
 }
+
+.completed {
+  text-decoration: line-through;
+  background-color: gray;
+}

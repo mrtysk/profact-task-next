@@ -6,9 +6,9 @@ export default function Home() {
   const { todolists } = useTodoListStore();
 
   // let earliestDate = undefined;
-  // earliestDate = TODO_LISTS.todos[0].expiresAt;
-  // for (let i = 1; i < TODO_LISTS.todos.length; i++) {
-  //   const judge = TODO_LISTS.todos[i].expiresAt;
+  // earliestDate = todolists;
+  // for (let i = 1; i < todolists.length; i++) {
+  //   const judge = todolists[i].todos.expiresAt;
   //   if (judge > earliestDate) {
   //     earliestDate = judge;
   //   }
@@ -32,7 +32,7 @@ export default function Home() {
                 作成日：
                 {`${todo.createdAt.getFullYear()}年${todo.createdAt.getMonth() + 1}月${todo.createdAt.getDate()}日`}
               </li>
-              {/* <li>最短期限：{earliestDate}</li> */}
+              <li>最短期限：{todo.expiresAt}</li>
             </ul>
           );
         })}

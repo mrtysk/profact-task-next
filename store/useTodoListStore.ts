@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { TodoList } from "@/types/todo";
+import type { Todo, TodoList } from "@/types/todo";
 
 interface TodoListStore {
   todolists: TodoList[];
@@ -55,13 +55,13 @@ export const useTodoListStore = create<TodoListStore>()((set) => ({
     },
   ],
 
-  // 追加
+  // --- リスト自体の操作 ---
+
   addTodoList: (todoList) =>
     set((state) => ({
       todolists: [...state.todolists, todoList],
     })),
 
-  // 編集
   updateTodoList: (id, data) =>
     set((state) => ({
       todolists: state.todolists.map((todoList) =>
@@ -71,10 +71,52 @@ export const useTodoListStore = create<TodoListStore>()((set) => ({
       ),
     })),
 
-  // 削除
   deleteTodoList: (id) =>
     set((state) => ({
       todolists: state.todolists.filter((todoList) => todoList.id !== id),
+    })),
+
+  // --- ★追加：個別のタスク（todos）の操作 ---
+
+  // 指定したリストIDの中に新しいタスクを追加する
+  addTodo: (listId: string, todoData: Todo) =>
+    set((state) => ({
+      todolists: state.todolists.map((list) => {
+        if (list.id !== listId) return list;
+
+        return {
+          ...list,
+          todos: [...list.todos, todoData],
+        };
+      }),
+    })),
+
+  // 指定したリストIDの中の、特定のタスクを更新する
+  updateTodo: (listId: string, todoId: string, data: Todo) =>
+    set((state) => ({
+      todolists: state.todolists.map((list) => {
+        if (list.id !== listId) return list;
+
+        return {
+          ...list,
+          todos: list.todos.map((todo) =>
+            todo.id === todoId ? { ...todo, ...data } : todo,
+          ),
+        };
+      }),
+    })),
+
+  // 指定したリストIDの中の、特定のタスクを削除する
+  deleteTodo: (listId: string, todoId: string) =>
+    set((state) => ({
+      todolists: state.todolists.map((list) => {
+        if (list.id !== listId) return list;
+
+        return {
+          ...list,
+          todos: list.todos.filter((todo) => todo.id !== todoId),
+        };
+      }),
     })),
 }));
 
